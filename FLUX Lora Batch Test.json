@@ -1,0 +1,884 @@
+{
+  "name": "FLUX Lora Batch Test",
+  "author": "",
+  "description": "",
+  "version": "",
+  "contact": "",
+  "tags": "",
+  "notes": "",
+  "exposedFields": [
+    {
+      "nodeId": "00ddabf2-47ef-4831-9ca0-139d13c4b71a",
+      "fieldName": "guidance"
+    },
+    {
+      "nodeId": "00ddabf2-47ef-4831-9ca0-139d13c4b71a",
+      "fieldName": "width"
+    },
+    {
+      "nodeId": "00ddabf2-47ef-4831-9ca0-139d13c4b71a",
+      "fieldName": "height"
+    },
+    {
+      "nodeId": "00ddabf2-47ef-4831-9ca0-139d13c4b71a",
+      "fieldName": "cfg_scale"
+    }
+  ],
+  "meta": {
+    "version": "3.0.0",
+    "category": "user"
+  },
+  "id": "95179383-d594-4f97-be12-98b606e97dfb",
+  "nodes": [
+    {
+      "id": "4ee2645d-3505-42d3-8835-49f65a8d3e35",
+      "type": "notes",
+      "data": {
+        "id": "4ee2645d-3505-42d3-8835-49f65a8d3e35",
+        "isOpen": true,
+        "label": "Notes",
+        "notes": "New Node to turn LORAs into a collection to allow  LORAs to collect to iterate",
+        "type": "notes"
+      },
+      "position": {
+        "x": -851.1661246194394,
+        "y": 242.74051120164563
+      }
+    },
+    {
+      "id": "24f19a40-65d3-450b-85f2-cd3906a2f114",
+      "type": "notes",
+      "data": {
+        "id": "24f19a40-65d3-450b-85f2-cd3906a2f114",
+        "isOpen": true,
+        "label": "Notes",
+        "notes": "Load LoRAs as LORA data type. \nFlux loader only outputs CLIP and Transformer",
+        "type": "notes"
+      },
+      "position": {
+        "x": -1682.9000583360612,
+        "y": 9.005524013250557
+      }
+    },
+    {
+      "id": "e77f5b80-c1fb-4e24-8b33-3e64ef35c557",
+      "type": "notes",
+      "data": {
+        "id": "e77f5b80-c1fb-4e24-8b33-3e64ef35c557",
+        "isOpen": true,
+        "label": "Notes",
+        "notes": "Keep Seed identical to only show LORA effect without prompt/seed changes",
+        "type": "notes"
+      },
+      "position": {
+        "x": -29.000491876466526,
+        "y": 339.4283069259267
+      }
+    },
+    {
+      "id": "4c9adaab-9dbd-400e-a24c-5f6db4a777fe",
+      "type": "notes",
+      "data": {
+        "id": "4c9adaab-9dbd-400e-a24c-5f6db4a777fe",
+        "isOpen": true,
+        "label": "Notes",
+        "notes": "Keep Seed identical to only show LORA effect without prompt/seed changes",
+        "type": "notes"
+      },
+      "position": {
+        "x": 405.7421345306641,
+        "y": 1073.4364495032678
+      }
+    },
+    {
+      "id": "ba3566fc-a286-4142-8d22-bab11830fe4b",
+      "type": "invocation",
+      "data": {
+        "id": "ba3566fc-a286-4142-8d22-bab11830fe4b",
+        "type": "integer",
+        "version": "1.0.1",
+        "label": "",
+        "notes": "",
+        "isOpen": true,
+        "isIntermediate": true,
+        "useCache": true,
+        "nodePack": "invokeai",
+        "inputs": {
+          "value": {
+            "name": "value",
+            "label": "",
+            "value": 0
+          }
+        }
+      },
+      "position": {
+        "x": 388.1405329255597,
+        "y": 1267.2268483565433
+      }
+    },
+    {
+      "id": "c14965b9-d52f-4ea4-83cc-b38015007f80",
+      "type": "invocation",
+      "data": {
+        "id": "c14965b9-d52f-4ea4-83cc-b38015007f80",
+        "type": "iterate",
+        "version": "1.1.0",
+        "label": "",
+        "notes": "",
+        "isOpen": true,
+        "isIntermediate": true,
+        "useCache": true,
+        "nodePack": "invokeai",
+        "inputs": {
+          "collection": {
+            "name": "collection",
+            "label": ""
+          }
+        }
+      },
+      "position": {
+        "x": -476.59711461153074,
+        "y": 451.58413232163457
+      }
+    },
+    {
+      "id": "0d6123f7-9666-40c0-8427-3afa0e56c0c0",
+      "type": "invocation",
+      "data": {
+        "id": "0d6123f7-9666-40c0-8427-3afa0e56c0c0",
+        "type": "FLUX_LORA_collection_Primitive",
+        "version": "1.0.1",
+        "label": "",
+        "notes": "",
+        "isOpen": true,
+        "isIntermediate": true,
+        "useCache": true,
+        "nodePack": "LORACollection",
+        "inputs": {
+          "collection": {
+            "name": "collection",
+            "label": "Collection"
+          }
+        }
+      },
+      "position": {
+        "x": -845.1446176718424,
+        "y": 458.1961256910507
+      }
+    },
+    {
+      "id": "00714f1c-5072-4059-b5b7-1adfdfaf2a71",
+      "type": "invocation",
+      "data": {
+        "id": "00714f1c-5072-4059-b5b7-1adfdfaf2a71",
+        "type": "lora_selector",
+        "version": "1.0.1",
+        "label": "",
+        "notes": "",
+        "isOpen": true,
+        "isIntermediate": true,
+        "useCache": true,
+        "nodePack": "invokeai",
+        "inputs": {
+          "lora": {
+            "name": "lora",
+            "label": "",
+            "value": {
+              "key": "cceec03b-1c0c-4589-bd6b-494f2beb5d00",
+              "hash": "blake3:c44b2e497dd1924b71a8d0dcb28ead0581263443028f5684af3ad05e3ee5520a",
+              "name": "3D_Flux_Style",
+              "base": "flux",
+              "type": "lora"
+            }
+          },
+          "weight": {
+            "name": "weight",
+            "label": "",
+            "value": 0.75
+          }
+        }
+      },
+      "position": {
+        "x": -1689.8882231257708,
+        "y": 451.6077957476258
+      }
+    },
+    {
+      "id": "284de05b-1bd4-4f96-924d-73370676b775",
+      "type": "invocation",
+      "data": {
+        "id": "284de05b-1bd4-4f96-924d-73370676b775",
+        "type": "lora_selector",
+        "version": "1.0.1",
+        "label": "",
+        "notes": "",
+        "isOpen": true,
+        "isIntermediate": true,
+        "useCache": true,
+        "nodePack": "invokeai",
+        "inputs": {
+          "lora": {
+            "name": "lora",
+            "label": "",
+            "value": {
+              "key": "b6e905de-677b-4a78-a847-2cb2020ab826",
+              "hash": "blake3:8cbba23410c155640325293a10e0c3faa5be7bc13e1746287d427cd6752b8052",
+              "name": "3d animation style_lora-000012",
+              "base": "flux",
+              "type": "lora"
+            }
+          },
+          "weight": {
+            "name": "weight",
+            "label": "",
+            "value": 0.75
+          }
+        }
+      },
+      "position": {
+        "x": -1683.7731152351187,
+        "y": 216.4010051435195
+      }
+    },
+    {
+      "id": "56bf9909-4bee-4694-89b2-066defd308de",
+      "type": "invocation",
+      "data": {
+        "id": "56bf9909-4bee-4694-89b2-066defd308de",
+        "type": "collect",
+        "version": "1.0.0",
+        "label": "",
+        "notes": "",
+        "isOpen": true,
+        "isIntermediate": true,
+        "useCache": true,
+        "nodePack": "invokeai",
+        "inputs": {
+          "item": {
+            "name": "item",
+            "label": ""
+          }
+        }
+      },
+      "position": {
+        "x": -1228.1500505145686,
+        "y": 459.9810842008293
+      }
+    },
+    {
+      "id": "ac2c0432-394b-47ca-8664-ad8a6a4c002f",
+      "type": "invocation",
+      "data": {
+        "id": "ac2c0432-394b-47ca-8664-ad8a6a4c002f",
+        "type": "flux_lora_collection_loader",
+        "version": "1.1.0",
+        "label": "",
+        "notes": "",
+        "isOpen": true,
+        "isIntermediate": true,
+        "useCache": true,
+        "nodePack": "invokeai",
+        "inputs": {
+          "loras": {
+            "name": "loras",
+            "label": ""
+          },
+          "transformer": {
+            "name": "transformer",
+            "label": ""
+          },
+          "clip": {
+            "name": "clip",
+            "label": ""
+          }
+        }
+      },
+      "position": {
+        "x": -31.935951585031944,
+        "y": 550.7469082673556
+      }
+    },
+    {
+      "id": "00ddabf2-47ef-4831-9ca0-139d13c4b71a",
+      "type": "invocation",
+      "data": {
+        "id": "00ddabf2-47ef-4831-9ca0-139d13c4b71a",
+        "type": "flux_denoise",
+        "version": "3.2.2",
+        "label": "",
+        "notes": "",
+        "isOpen": true,
+        "isIntermediate": true,
+        "useCache": true,
+        "nodePack": "invokeai",
+        "inputs": {
+          "board": {
+            "name": "board",
+            "label": ""
+          },
+          "metadata": {
+            "name": "metadata",
+            "label": ""
+          },
+          "latents": {
+            "name": "latents",
+            "label": ""
+          },
+          "denoise_mask": {
+            "name": "denoise_mask",
+            "label": ""
+          },
+          "denoising_start": {
+            "name": "denoising_start",
+            "label": "",
+            "value": 0
+          },
+          "denoising_end": {
+            "name": "denoising_end",
+            "label": "",
+            "value": 1
+          },
+          "add_noise": {
+            "name": "add_noise",
+            "label": "",
+            "value": true
+          },
+          "transformer": {
+            "name": "transformer",
+            "label": ""
+          },
+          "control_lora": {
+            "name": "control_lora",
+            "label": ""
+          },
+          "positive_text_conditioning": {
+            "name": "positive_text_conditioning",
+            "label": ""
+          },
+          "negative_text_conditioning": {
+            "name": "negative_text_conditioning",
+            "label": ""
+          },
+          "cfg_scale": {
+            "name": "cfg_scale",
+            "label": "",
+            "value": 1
+          },
+          "cfg_scale_start_step": {
+            "name": "cfg_scale_start_step",
+            "label": "",
+            "value": 0
+          },
+          "cfg_scale_end_step": {
+            "name": "cfg_scale_end_step",
+            "label": "",
+            "value": -1
+          },
+          "width": {
+            "name": "width",
+            "label": "",
+            "value": 1024
+          },
+          "height": {
+            "name": "height",
+            "label": "",
+            "value": 1024
+          },
+          "num_steps": {
+            "name": "num_steps",
+            "label": "",
+            "value": 20
+          },
+          "guidance": {
+            "name": "guidance",
+            "label": "",
+            "value": 4
+          },
+          "seed": {
+            "name": "seed",
+            "label": "",
+            "value": 0
+          },
+          "control": {
+            "name": "control",
+            "label": ""
+          },
+          "controlnet_vae": {
+            "name": "controlnet_vae",
+            "label": ""
+          },
+          "ip_adapter": {
+            "name": "ip_adapter",
+            "label": ""
+          }
+        }
+      },
+      "position": {
+        "x": 785.2805652059308,
+        "y": 436.1811304718501
+      }
+    },
+    {
+      "id": "flux_text_encoder:m0iXQyQ50v",
+      "type": "invocation",
+      "data": {
+        "id": "flux_text_encoder:m0iXQyQ50v",
+        "version": "1.1.1",
+        "nodePack": "invokeai",
+        "label": "",
+        "notes": "",
+        "type": "flux_text_encoder",
+        "inputs": {
+          "clip": {
+            "name": "clip",
+            "label": ""
+          },
+          "t5_encoder": {
+            "name": "t5_encoder",
+            "label": ""
+          },
+          "t5_max_seq_len": {
+            "name": "t5_max_seq_len",
+            "label": "",
+            "value": 256
+          },
+          "prompt": {
+            "name": "prompt",
+            "label": "",
+            "value": "A cube from 3/4 perspective"
+          },
+          "mask": {
+            "name": "mask",
+            "label": ""
+          }
+        },
+        "isOpen": true,
+        "isIntermediate": true,
+        "useCache": true
+      },
+      "position": {
+        "x": 395.5898935069563,
+        "y": 679.616672356119
+      }
+    },
+    {
+      "id": "flux_model_loader:hvOboKlBCn",
+      "type": "invocation",
+      "data": {
+        "id": "flux_model_loader:hvOboKlBCn",
+        "version": "1.0.4",
+        "nodePack": "invokeai",
+        "label": "",
+        "notes": "",
+        "type": "flux_model_loader",
+        "inputs": {
+          "model": {
+            "name": "model",
+            "label": "",
+            "value": {
+              "key": "266014df-55a2-4857-b3cf-4bc23cd9fbe1",
+              "hash": "blake3:8e532c2cb80971c1fc56074e63adcfcaba7b2e1c7c79afda98a459aafd4f4b87",
+              "name": "FLUX Dev (Quantized)",
+              "base": "flux",
+              "type": "main"
+            }
+          },
+          "t5_encoder_model": {
+            "name": "t5_encoder_model",
+            "label": "",
+            "value": {
+              "key": "b0b700e5-05e4-4300-8cb6-5d9cbbac1431",
+              "hash": "blake3:38aafa42899cf4fe8b1055d17de6e7fe15af104d193da4a320e34ca24db32754",
+              "name": "t5_bnb_int8_quantized_encoder",
+              "base": "any",
+              "type": "t5_encoder"
+            }
+          },
+          "clip_embed_model": {
+            "name": "clip_embed_model",
+            "label": "",
+            "value": {
+              "key": "d137fc60-2564-43a3-bf98-5a77f55ab4ac",
+              "hash": "blake3:17c19f0ef941c3b7609a9c94a659ca5364de0be364a91d4179f0e39ba17c3b70",
+              "name": "clip-vit-large-patch14",
+              "base": "any",
+              "type": "clip_embed"
+            }
+          },
+          "vae_model": {
+            "name": "vae_model",
+            "label": "",
+            "value": {
+              "key": "73e07aa7-12b9-4ae5-8679-af3bedc1e076",
+              "hash": "blake3:ce21cb76364aa6e2421311cf4a4b5eb052a76c4f1cd207b50703d8978198a068",
+              "name": "FLUX.1-schnell_ae",
+              "base": "flux",
+              "type": "vae"
+            }
+          }
+        },
+        "isOpen": true,
+        "isIntermediate": true,
+        "useCache": true
+      },
+      "position": {
+        "x": -457.288250284087,
+        "y": 637.7022707864157
+      }
+    },
+    {
+      "id": "core_metadata:cfIJL8J7wf",
+      "type": "invocation",
+      "data": {
+        "id": "core_metadata:cfIJL8J7wf",
+        "version": "2.0.0",
+        "nodePack": "invokeai",
+        "label": "",
+        "notes": "",
+        "type": "core_metadata",
+        "inputs": {
+          "generation_mode": {
+            "name": "generation_mode",
+            "label": "",
+            "value": "flux_txt2img"
+          },
+          "positive_prompt": {
+            "name": "positive_prompt",
+            "label": "",
+            "value": "a test sign"
+          },
+          "negative_prompt": {
+            "name": "negative_prompt",
+            "label": ""
+          },
+          "width": {
+            "name": "width",
+            "label": "",
+            "value": 1024
+          },
+          "height": {
+            "name": "height",
+            "label": "",
+            "value": 1024
+          },
+          "seed": {
+            "name": "seed",
+            "label": "",
+            "value": 935020071
+          },
+          "rand_device": {
+            "name": "rand_device",
+            "label": ""
+          },
+          "cfg_scale": {
+            "name": "cfg_scale",
+            "label": ""
+          },
+          "cfg_rescale_multiplier": {
+            "name": "cfg_rescale_multiplier",
+            "label": ""
+          },
+          "steps": {
+            "name": "steps",
+            "label": "",
+            "value": 20
+          },
+          "scheduler": {
+            "name": "scheduler",
+            "label": ""
+          },
+          "seamless_x": {
+            "name": "seamless_x",
+            "label": ""
+          },
+          "seamless_y": {
+            "name": "seamless_y",
+            "label": ""
+          },
+          "clip_skip": {
+            "name": "clip_skip",
+            "label": ""
+          },
+          "model": {
+            "name": "model",
+            "label": "",
+            "value": {
+              "key": "18140157-671b-43b8-ac4b-b4e97f6c70d3",
+              "hash": "blake3:930ca47fa2a17b4163fb228385a026d6f55c1deb88d59672f4d69f2d332d9b45",
+              "name": "flux1-dev-bnb-nf4-v2",
+              "base": "flux",
+              "type": "main",
+              "submodel_type": null
+            }
+          },
+          "controlnets": {
+            "name": "controlnets",
+            "label": ""
+          },
+          "ipAdapters": {
+            "name": "ipAdapters",
+            "label": "Ipadapters"
+          },
+          "t2iAdapters": {
+            "name": "t2iAdapters",
+            "label": ""
+          },
+          "loras": {
+            "name": "loras",
+            "label": ""
+          },
+          "strength": {
+            "name": "strength",
+            "label": ""
+          },
+          "init_image": {
+            "name": "init_image",
+            "label": ""
+          },
+          "vae": {
+            "name": "vae",
+            "label": "",
+            "value": {
+              "key": "4b27e970-680d-450d-bd65-e5ffb662675b",
+              "hash": "blake3:ce21cb76364aa6e2421311cf4a4b5eb052a76c4f1cd207b50703d8978198a068",
+              "name": "FLUX.1-schnell_ae",
+              "base": "flux",
+              "type": "vae",
+              "submodel_type": null
+            }
+          },
+          "hrf_enabled": {
+            "name": "hrf_enabled",
+            "label": ""
+          },
+          "hrf_method": {
+            "name": "hrf_method",
+            "label": ""
+          },
+          "hrf_strength": {
+            "name": "hrf_strength",
+            "label": ""
+          },
+          "positive_style_prompt": {
+            "name": "positive_style_prompt",
+            "label": ""
+          },
+          "negative_style_prompt": {
+            "name": "negative_style_prompt",
+            "label": ""
+          },
+          "refiner_model": {
+            "name": "refiner_model",
+            "label": ""
+          },
+          "refiner_cfg_scale": {
+            "name": "refiner_cfg_scale",
+            "label": ""
+          },
+          "refiner_steps": {
+            "name": "refiner_steps",
+            "label": ""
+          },
+          "refiner_scheduler": {
+            "name": "refiner_scheduler",
+            "label": ""
+          },
+          "refiner_positive_aesthetic_score": {
+            "name": "refiner_positive_aesthetic_score",
+            "label": ""
+          },
+          "refiner_negative_aesthetic_score": {
+            "name": "refiner_negative_aesthetic_score",
+            "label": ""
+          },
+          "refiner_start": {
+            "name": "refiner_start",
+            "label": ""
+          }
+        },
+        "isOpen": false,
+        "isIntermediate": true,
+        "useCache": true
+      },
+      "position": {
+        "x": 791.6980687243286,
+        "y": 1383.068345850483
+      }
+    },
+    {
+      "id": "canvas_output:stuODVqoHi",
+      "type": "invocation",
+      "data": {
+        "id": "canvas_output:stuODVqoHi",
+        "version": "1.0.0",
+        "nodePack": "invokeai",
+        "label": "",
+        "notes": "",
+        "type": "flux_vae_decode",
+        "inputs": {
+          "board": {
+            "name": "board",
+            "label": ""
+          },
+          "metadata": {
+            "name": "metadata",
+            "label": ""
+          },
+          "latents": {
+            "name": "latents",
+            "label": ""
+          },
+          "vae": {
+            "name": "vae",
+            "label": ""
+          }
+        },
+        "isOpen": true,
+        "isIntermediate": false,
+        "useCache": false
+      },
+      "position": {
+        "x": 1209.808192288971,
+        "y": 418.57619815982736
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "reactflow__edge-c14965b9-d52f-4ea4-83cc-b38015007f80item-00ddabf2-47ef-4831-9ca0-139d13c4b71aadd_noise",
+      "type": "default",
+      "source": "c14965b9-d52f-4ea4-83cc-b38015007f80",
+      "target": "00ddabf2-47ef-4831-9ca0-139d13c4b71a",
+      "sourceHandle": "item",
+      "targetHandle": "add_noise"
+    },
+    {
+      "id": "reactflow__edge-c14965b9-d52f-4ea4-83cc-b38015007f80item-ac2c0432-394b-47ca-8664-ad8a6a4c002floras",
+      "type": "default",
+      "source": "c14965b9-d52f-4ea4-83cc-b38015007f80",
+      "target": "ac2c0432-394b-47ca-8664-ad8a6a4c002f",
+      "sourceHandle": "item",
+      "targetHandle": "loras"
+    },
+    {
+      "id": "reactflow__edge-ba3566fc-a286-4142-8d22-bab11830fe4bvalue-00ddabf2-47ef-4831-9ca0-139d13c4b71aseed",
+      "type": "default",
+      "source": "ba3566fc-a286-4142-8d22-bab11830fe4b",
+      "target": "00ddabf2-47ef-4831-9ca0-139d13c4b71a",
+      "sourceHandle": "value",
+      "targetHandle": "seed"
+    },
+    {
+      "id": "reactflow__edge-0d6123f7-9666-40c0-8427-3afa0e56c0c0collection-c14965b9-d52f-4ea4-83cc-b38015007f80collection",
+      "type": "default",
+      "source": "0d6123f7-9666-40c0-8427-3afa0e56c0c0",
+      "target": "c14965b9-d52f-4ea4-83cc-b38015007f80",
+      "sourceHandle": "collection",
+      "targetHandle": "collection"
+    },
+    {
+      "id": "reactflow__edge-56bf9909-4bee-4694-89b2-066defd308decollection-0d6123f7-9666-40c0-8427-3afa0e56c0c0collection",
+      "type": "default",
+      "source": "56bf9909-4bee-4694-89b2-066defd308de",
+      "target": "0d6123f7-9666-40c0-8427-3afa0e56c0c0",
+      "sourceHandle": "collection",
+      "targetHandle": "collection"
+    },
+    {
+      "id": "reactflow__edge-00714f1c-5072-4059-b5b7-1adfdfaf2a71lora-56bf9909-4bee-4694-89b2-066defd308deitem",
+      "type": "default",
+      "source": "00714f1c-5072-4059-b5b7-1adfdfaf2a71",
+      "target": "56bf9909-4bee-4694-89b2-066defd308de",
+      "sourceHandle": "lora",
+      "targetHandle": "item"
+    },
+    {
+      "id": "reactflow__edge-284de05b-1bd4-4f96-924d-73370676b775lora-56bf9909-4bee-4694-89b2-066defd308deitem",
+      "type": "default",
+      "source": "284de05b-1bd4-4f96-924d-73370676b775",
+      "target": "56bf9909-4bee-4694-89b2-066defd308de",
+      "sourceHandle": "lora",
+      "targetHandle": "item"
+    },
+    {
+      "id": "reactflow__edge-ac2c0432-394b-47ca-8664-ad8a6a4c002ftransformer-00ddabf2-47ef-4831-9ca0-139d13c4b71atransformer",
+      "type": "default",
+      "source": "ac2c0432-394b-47ca-8664-ad8a6a4c002f",
+      "target": "00ddabf2-47ef-4831-9ca0-139d13c4b71a",
+      "sourceHandle": "transformer",
+      "targetHandle": "transformer"
+    },
+    {
+      "id": "reactflow__edge-ac2c0432-394b-47ca-8664-ad8a6a4c002fclip-flux_text_encoder:m0iXQyQ50vclip",
+      "type": "default",
+      "source": "ac2c0432-394b-47ca-8664-ad8a6a4c002f",
+      "target": "flux_text_encoder:m0iXQyQ50v",
+      "sourceHandle": "clip",
+      "targetHandle": "clip"
+    },
+    {
+      "id": "reactflow__edge-flux_model_loader:hvOboKlBCnclip-ac2c0432-394b-47ca-8664-ad8a6a4c002fclip",
+      "type": "default",
+      "source": "flux_model_loader:hvOboKlBCn",
+      "target": "ac2c0432-394b-47ca-8664-ad8a6a4c002f",
+      "sourceHandle": "clip",
+      "targetHandle": "clip"
+    },
+    {
+      "id": "reactflow__edge-flux_model_loader:hvOboKlBCntransformer-ac2c0432-394b-47ca-8664-ad8a6a4c002ftransformer",
+      "type": "default",
+      "source": "flux_model_loader:hvOboKlBCn",
+      "target": "ac2c0432-394b-47ca-8664-ad8a6a4c002f",
+      "sourceHandle": "transformer",
+      "targetHandle": "transformer"
+    },
+    {
+      "id": "reactflow__edge-00ddabf2-47ef-4831-9ca0-139d13c4b71alatents-canvas_output:stuODVqoHilatents",
+      "type": "default",
+      "source": "00ddabf2-47ef-4831-9ca0-139d13c4b71a",
+      "target": "canvas_output:stuODVqoHi",
+      "sourceHandle": "latents",
+      "targetHandle": "latents"
+    },
+    {
+      "id": "reactflow__edge-flux_text_encoder:m0iXQyQ50vconditioning-00ddabf2-47ef-4831-9ca0-139d13c4b71apositive_text_conditioning",
+      "type": "default",
+      "source": "flux_text_encoder:m0iXQyQ50v",
+      "target": "00ddabf2-47ef-4831-9ca0-139d13c4b71a",
+      "sourceHandle": "conditioning",
+      "targetHandle": "positive_text_conditioning"
+    },
+    {
+      "id": "2c584b1c-586a-47a4-acd5-4c721adca323",
+      "type": "default",
+      "source": "flux_model_loader:hvOboKlBCn",
+      "target": "canvas_output:stuODVqoHi",
+      "sourceHandle": "vae",
+      "targetHandle": "vae"
+    },
+    {
+      "id": "7781c0f7-a15c-45dc-bd9e-f47117a3cb3e",
+      "type": "default",
+      "source": "flux_model_loader:hvOboKlBCn",
+      "target": "flux_text_encoder:m0iXQyQ50v",
+      "sourceHandle": "t5_encoder",
+      "targetHandle": "t5_encoder"
+    },
+    {
+      "id": "282b0782-cd8b-4e39-adc6-fb7822ebfc7b",
+      "type": "default",
+      "source": "flux_model_loader:hvOboKlBCn",
+      "target": "flux_text_encoder:m0iXQyQ50v",
+      "sourceHandle": "max_seq_len",
+      "targetHandle": "t5_max_seq_len"
+    },
+    {
+      "id": "c7d71c35-5dd6-49b4-bf8d-064c963acf40",
+      "type": "default",
+      "source": "core_metadata:cfIJL8J7wf",
+      "target": "canvas_output:stuODVqoHi",
+      "sourceHandle": "metadata",
+      "targetHandle": "metadata"
+    }
+  ]
+}
